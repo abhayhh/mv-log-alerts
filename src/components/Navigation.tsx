@@ -22,11 +22,10 @@ export const Navigation = ({ activeTab, onTabChange }: NavigationProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { id: 'search', label: 'Search Video', icon: Search },
-    { id: 'add-user', label: 'Add User', icon: UserPlus },
-    { id: 'user-details', label: 'User Details', icon: User },
+    { id: 'past24hrs', label: 'Past 24 Hrs', icon: Search },
+    { id: 'search-lang', label: 'Search by Language', icon: UserPlus },
     { id: 'upload', label: 'Upload File', icon: Upload },
-    { id: 'change-pwd', label: 'Change Pwd', icon: Lock },
+    { id: 'login', label: 'Login', icon: Lock },
   ];
 
   return (

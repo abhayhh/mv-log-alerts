@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { SearchFilters } from "@/components/SearchFilters";
 import { VideoTable } from "@/components/VideoTable";
+import { LanguageSearch } from "@/components/LanguageSearch";
 import { useToast } from "@/hooks/use-toast";
 
 interface VideoData {
@@ -18,7 +19,7 @@ interface VideoData {
 }
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState('search');
+  const [activeTab, setActiveTab] = useState('past24hrs');
   const [videos, setVideos] = useState<VideoData[]>([
     {
       id: 1,
@@ -163,27 +164,29 @@ const Index = () => {
     });
   };
 
+  const handleChannelSelect = (channel: string) => {
+    toast({
+      title: "Channel Selected",
+      description: `Showing past 24 hrs videos for ${channel}`,
+    });
+    // Filter videos for the selected channel
+    // This would typically fetch from API
+  };
+
   const renderContent = () => {
     switch (activeTab) {
-      case 'search':
+      case 'past24hrs':
         return (
           <div className="space-y-6">
             <SearchFilters onSearch={handleSearch} />
             <VideoTable videos={videos} onSort={handleSort} />
           </div>
         );
-      case 'add-user':
+      case 'search-lang':
         return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-semibold mb-4">Add User</h2>
-            <p className="text-muted-foreground">User management functionality coming soon.</p>
-          </div>
-        );
-      case 'user-details':
-        return (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-semibold mb-4">User Details</h2>
-            <p className="text-muted-foreground">User details functionality coming soon.</p>
+          <div className="space-y-6">
+            <LanguageSearch onChannelSelect={handleChannelSelect} />
+            <VideoTable videos={videos} onSort={handleSort} />
           </div>
         );
       case 'upload':
@@ -193,11 +196,11 @@ const Index = () => {
             <p className="text-muted-foreground">File upload functionality coming soon.</p>
           </div>
         );
-      case 'change-pwd':
+      case 'login':
         return (
           <div className="text-center py-12">
-            <h2 className="text-2xl font-semibold mb-4">Change Password</h2>
-            <p className="text-muted-foreground">Password change functionality coming soon.</p>
+            <h2 className="text-2xl font-semibold mb-4">Login</h2>
+            <p className="text-muted-foreground">Login functionality coming soon.</p>
           </div>
         );
       default:

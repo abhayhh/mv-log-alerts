@@ -24,16 +24,26 @@ export const SearchFilters = ({ onSearch }: SearchFiltersProps) => {
   };
 
   const channels = [
-    { code: "1010485", name: "Channel 1" },
-    { code: "1015268", name: "Channel 2" },
-    { code: "1010297", name: "Channel 3" },
-    { code: "1010302", name: "Channel 4" },
-    { code: "1010337", name: "Channel 5" },
-    { code: "1010395", name: "Channel 6" },
-    { code: "1010412", name: "Channel 7" },
-    { code: "1010413", name: "Channel 8" },
-    { code: "1010430", name: "Channel 9" },
-    { code: "1010670", name: "Channel 10" },
+    { code: "NDTV24x7", name: "NDTV 24x7" },
+    { code: "TimesNow", name: "Times Now" },
+    { code: "CNNNews18", name: "CNN-News18" },
+    { code: "RepublicTV", name: "Republic TV" },
+    { code: "IndiaToday", name: "India Today" },
+    { code: "AajTak", name: "Aaj Tak" },
+    { code: "ABPNews", name: "ABP News" },
+    { code: "ZeeNews", name: "Zee News" },
+    { code: "IndiaTV", name: "India TV" },
+    { code: "NDTVIndia", name: "NDTV India" },
+    { code: "News18India", name: "News18 India" },
+    { code: "DDNews", name: "DD News" },
+    { code: "NewsNation", name: "News Nation" },
+    { code: "RepublicBharat", name: "Republic Bharat" },
+    { code: "SunNews", name: "Sun News" },
+    { code: "TV9Telugu", name: "TV9 Telugu" },
+    { code: "ABPAnanda", name: "ABP Ananda" },
+    { code: "PublicTV", name: "Public TV" },
+    { code: "AsianetNews", name: "Asianet News" },
+    { code: "ABPMajha", name: "ABP Majha" },
   ];
 
   return (
