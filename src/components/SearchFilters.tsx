@@ -82,8 +82,8 @@ export const SearchFilters = ({ onSearch }: SearchFiltersProps) => {
               <SelectTrigger>
                 <SelectValue placeholder="Select Channel" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="">All Channels</SelectItem>
+            <SelectContent>
+                <SelectItem value="all">All Channels</SelectItem>
                 {channels.map((channel) => (
                   <SelectItem key={channel.code} value={channel.code}>
                     {channel.name} ({channel.code})
